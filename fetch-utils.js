@@ -12,21 +12,18 @@ export function getUser() {
 
 export async function signUpUser(email, password) {
     // > Part A: supabase signup
-    return await client.auth.signUp({
-        email,
-        password,
-    });
+    const response = client.auth.signUp({ email, password });
+    return response;
 }
 
 export async function signInUser(email, password) {
     // > Part A: supabase signin
-    return await client.auth.signIn({
-        email,
-        password,
-    });
+    const response = client.auth.signIn({ email, password });
+    return response;
 }
 
 export async function signOutUser() {
     // > Part B: supabase signout
-    return await client.auth.signOut();
+    const response = client.auth.signOut();
+    return response;
 }
