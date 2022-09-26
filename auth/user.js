@@ -9,3 +9,4 @@ const signOutLink = document.getElementById('sign-out-link');
 //       redirect code: location.replace(`/auth/?redirectUrl=${encodeURIComponent(location)}`);
 
 // > Part B: attach event listener to signOutLink that calls signOutUser
+signOutLink.addEventListener('click', signOutUser);
