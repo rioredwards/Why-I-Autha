@@ -9,8 +9,10 @@ const user = getUser();
 //     - check if there is not a user and if so do the redirect
 //       redirect code: location.replace(`/auth/?redirectUrl=${encodeURIComponent(location)}`);
 if (!user) {
-    location.replace(`/auth/?redirectUrl=${encodeURIComponent(location)}`);
+    const base = location.pathname === '/' ? './' : '../';
+    location.replace(`${base}auth/?redirectUrl=${encodeURIComponent(location)}`);
 }
-
 // > Part B: attach event listener to signOutLink that calls signOutUser
-signOutLink.addEventListener('click', signOutUser);
+signOutLink.addEventListener('click', async () => {
+    await signOutUser();
+});
